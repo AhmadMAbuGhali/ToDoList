@@ -4,4 +4,12 @@
     <string name="logo">logo</string>
     <string name="description">description</string>
     <string name="next">Next</string>
+    <string name="Create_Profile_intro"> Create profile to start your first ToDo List </string>
+    <string name="Name">Your Name </string>
+    <string name="Pass">Password</string>
+    <string name="Email">Your Email address  </string>
+    <string name="Create_Profile">Create your Profile</string>
+    <string name="having_acc">Already have an account</string>
+    <string name="login">Log in</string>
+
 </resources>
