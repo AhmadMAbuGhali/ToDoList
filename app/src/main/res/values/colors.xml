@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="bgColor">#7135D8</color>
+    <color name="BoColor">#FB5607</color>
+    <color name="BorderC">#EAE6EA</color>
+    <color name="red">#F00</color>
 </resources>

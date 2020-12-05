@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,38 +12,32 @@
 
 
 tools:context=".MainActivity">
-
+<!--IMG  -->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="259dp"
-        android:contentDescription="@string/description"
         app:srcCompat="@drawable/logo"
+        android:layout_gravity="center"
+        android:layout_marginTop="259dp"
 
-        />
+        android:contentDescription="@string/todo" />
+<!--  TEXT  -->
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="105dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="119dp"
         android:text="@string/TDl"
         android:textColor="@color/white"
         android:textSize="30sp"
 
 
         />
-<!-- may dont make button  I will make it just  a loading sec for 2 second     -->
-<!--    <Button-->
-<!--        android:id="@+id/button"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_gravity="end"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:text="@string/next" />-->
 
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</LinearLayout>

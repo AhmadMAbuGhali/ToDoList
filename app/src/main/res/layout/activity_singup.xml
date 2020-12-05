@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Singup"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/CPTS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/CPTS"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_marginTop="95dp"
+        />
+
+    <EditText
+        android:id="@+id/Yname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginTop="69dp"
+        android:hint="@string/Yname"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:autofillHints="" />
+
+    <EditText
+
+        android:id="@+id/Spassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginTop="20dp"
+        android:hint="@string/Pass"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:inputType="textPassword"
+        android:autofillHints="" />
+
+    <EditText
+        android:id="@+id/Semail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="37dp"
+       android:layout_marginTop="15dp"
+        android:hint="@string/email"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:autofillHints="" />
+
+
+
+
+    <Button
+        android:id="@+id/CYP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CP"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginEnd="37dp"
+        android:backgroundTint="@color/BoColor"
+
+        />
+
+    <TextView
+        android:id="@+id/AHA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginTop="113dp"
+        android:layout_marginStart="130dp"
+        android:text="@string/AHA"
+
+
+        />
+
+    <TextView
+        android:id="@+id/loginP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Login"
+        android:textColor="@color/white"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="195dp"
+        android:textSize="16sp"
+
+        />
+
+
+</LinearLayout>

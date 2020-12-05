@@ -2,6 +2,17 @@
     <string name="app_name">ToDoList</string>
     <string name="TDl">Things ToDo </string>
     <string name="logo">logo</string>
-    <string name="description">description</string>
     <string name="next">Next</string>
+    <string name="CPTS">Create profile to start your first ToDo List</string>
+    <string name="Yname">Your name</string>
+    <string name="Pass">Password</string>
+    <string name="email">Your email address</string>
+    <string name="CP">Create your profile</string>
+    <string name="AHA">Already have an account?</string>
+    <string name="Login">Log In</string>
+    <string name="WB">Welcome back!</string>
+    <string name="FP">Forgot your password?</string>
+    <string name="DHA">Don’t have an account?</string>
+    <string name="todo">TODO</string>
+
 </resources>
