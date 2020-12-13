@@ -43,10 +43,10 @@ public class Singup extends AppCompatActivity {
             startActivity(intent);
         }
     });
-    if (mAuth.getCurrentUser() != null){
-        startActivity(new Intent(getApplicationContext(),List.class));
-        finish();
-    }
+//    if (mAuth.getCurrentUser() != null){
+//        startActivity(new Intent(getApplicationContext(),listToDo.class));
+//        finish();
+//    }
 
     CYP.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -78,7 +78,8 @@ public class Singup extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(Singup.this,"Successfuly sing up",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),List.class));
+                        startActivity(new Intent(getApplicationContext(),listToDo.class));
+                        finish();
                     }else{
                         Toast.makeText(Singup.this,"Error sing up"+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                     }

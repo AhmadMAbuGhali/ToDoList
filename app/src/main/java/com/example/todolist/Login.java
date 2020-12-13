@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         Toast.makeText(Login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),List.class));
+                        startActivity(new Intent(getApplicationContext(),listToDo.class));
                     }else{
                         Toast.makeText(Login.this,"Error Log in"+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
 
@@ -85,7 +85,8 @@ public class Login extends AppCompatActivity {
 
 
                 Intent intent =new Intent(Login.this,Singup.class);
-                startActivity(new Intent(getApplicationContext(),Singup.class));
+                startActivity( intent );
+                finish();
             }
         });
     }

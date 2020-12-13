@@ -14,6 +14,15 @@
     <string name="FP">Forgot your password?</string>
     <string name="DHA">Don’t have an account?</string>
     <string name="todo">TODO</string>
-    <string name="List">List</string>
+    <string name="List">Lists :</string>
+    <string name="Back">Back</string>
+    <string name="LTD">List To Do</string>
+    <string name="Tasks">Tasks</string>
+    <string name="CNLH">Create new list here</string>
+    <string name="search">Search</string>
+    <string name="delete">Delete</string>
+    <string name="CNTH">Create new task here</string>
+    <string name="TaskParent">Task Parent </string>
 
+    TaskParent
 </resources>
