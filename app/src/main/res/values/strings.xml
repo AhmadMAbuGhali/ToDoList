@@ -3,6 +3,7 @@
     <string name="TDl">Things ToDo </string>
     <string name="logo">logo</string>
     <string name="next">Next</string>
+<<<<<<< HEAD
     <string name="CPTS">Create profile to start your first ToDo List</string>
     <string name="Yname">Your name</string>
     <string name="Pass">Password</string>
@@ -25,4 +26,14 @@
     <string name="TaskParent">Task Parent </string>
 
     TaskParent
+=======
+    <string name="Create_Profile_intro"> Create profile to start your first ToDo List </string>
+    <string name="Name">Your Name </string>
+    <string name="Pass">Password</string>
+    <string name="Email">Your Email address  </string>
+    <string name="Create_Profile">Create your Profile</string>
+    <string name="having_acc">Already have an account</string>
+    <string name="login">Log in</string>
+
+>>>>>>> 4bd5f57d47cedef50b7afd0efed8544ced8448d2
 </resources>
