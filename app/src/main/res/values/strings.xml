@@ -23,6 +23,7 @@
     <string name="delete">Delete</string>
     <string name="CNTH">Create new task here</string>
     <string name="TaskParent">Task Parent </string>
+    <string name="result">Result</string>
 
     TaskParent
 </resources>

@@ -1,17 +1,18 @@
 package com.example.todolist;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class tasklist_item {
-    String taskName;
+import android.os.Bundle;
+
+public class SearchItem {
+    String  taskName;
     Boolean isCheeked;
     String taskId;
-    String taskListid;
 
-    public tasklist_item() {
+    public SearchItem(String taskName, Boolean isCheeked, String taskId) {
         this.taskName = taskName;
         this.isCheeked = isCheeked;
         this.taskId = taskId;
-        this.taskListid = taskListid;
     }
 
     public String getTaskName() {
@@ -36,13 +37,5 @@ public class tasklist_item {
 
     public void setTaskId(String taskId) {
         this.taskId = taskId;
-    }
-
-    public String getTaskListid() {
-        return taskListid;
-    }
-
-    public void setTaskListid(String taskListid) {
-        this.taskListid = taskListid;
     }
 }
