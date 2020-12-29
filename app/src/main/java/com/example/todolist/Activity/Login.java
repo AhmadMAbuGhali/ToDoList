@@ -1,4 +1,4 @@
-package com.example.todolist;
+package com.example.todolist.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.todolist.R;
+import com.example.todolist.classes.Lists;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -34,13 +36,16 @@ public class Login extends AppCompatActivity {
         Lpassword =findViewById(R.id.Lpassword);
         Lemail =findViewById(R.id.Lemail);
         mAuth =FirebaseAuth.getInstance();
-
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String email =Lemail.getText().toString().trim();
                 String password = Lpassword.getText().toString().trim();
+   //Cheek if user login
+    if (mAuth.getCurrentUser() != null){
+        startActivity(new Intent(getApplicationContext(),Lists.class));
+        finish();
+    }
 
                 //Check if data not null
 
@@ -62,13 +67,13 @@ public class Login extends AppCompatActivity {
                 mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()){
-                        Toast.makeText(Login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(getApplicationContext(),listToDo.class));
-                    }else{
-                        Toast.makeText(Login.this,"Error Log in"+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()){
+                            Toast.makeText(Login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(), Lists.class));
+                        }else{
+                            Toast.makeText(Login.this,"Error Log in"+ task.getException().getMessage(),Toast.LENGTH_SHORT).show();
 
-                    }
+                        }
 
                     }
                 });
@@ -84,10 +89,11 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent intent =new Intent(Login.this,Singup.class);
+                Intent intent =new Intent(Login.this,SignUp.class);
                 startActivity( intent );
                 finish();
             }
         });
     }
+
 }

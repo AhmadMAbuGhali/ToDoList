@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bgColor"
-    tools:context=".Search">
+    tools:context=".classes.Lists">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
         >
 
         <Button
-            android:id="@+id/backtoPage"
+            android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -24,7 +24,7 @@
             android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
             app:backgroundTint="@color/bgColor" />
         <TextView
-            android:id="@+id/TaskHeader"
+            android:id="@+id/Header"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/LTD"
@@ -32,12 +32,22 @@
             android:textSize="15sp"
             android:layout_marginStart="80dp"
 
+
+            />
+        <TextView
+            android:id="@+id/Logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:textSize="15sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="100dp"
             />
 
-
     </LinearLayout>
+
     <EditText
-        android:id="@+id/searchP"
+        android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:hint="@string/search"
@@ -49,19 +59,33 @@
         android:inputType="text" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/ListText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/result"
         android:textColor="@color/white"
-        android:textSize="40sp"
+        android:text="@string/List"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        />
+
+    <EditText
+        android:id="@+id/CNL"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:hint="@string/CNLH"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:drawableLeft="@drawable/ic_baseline_add_24"
+        tools:ignore="MissingConstraints"
+        android:background="@drawable/shape"
+        android:inputType="text"
 
         />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RecSearch"
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         />
-
 </LinearLayout>

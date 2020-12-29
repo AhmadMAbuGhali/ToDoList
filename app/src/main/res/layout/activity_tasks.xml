@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +8,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/bgColor"
-    tools:context=".listToDo">
+    tools:context=".classes.Tasks">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
         >
 
         <Button
-            android:id="@+id/back"
+            android:id="@+id/backtolist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
@@ -24,47 +25,61 @@
             android:drawableLeft="@drawable/ic_baseline_arrow_back_ios_24"
             app:backgroundTint="@color/bgColor" />
         <TextView
-            android:id="@+id/Header"
+            android:id="@+id/TaskHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/LTD"
+            android:text="@string/TDl"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:layout_marginStart="80dp"
 
-
             />
 
+        <Button
+            android:id="@+id/searchB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:background="@color/bgColor"
+            android:drawableLeft="@drawable/ic_baseline_search_24"
+            app:backgroundTint="@color/bgColor"
+            />
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/search"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:hint="@string/search"
-        android:layout_margin="20dp"
-        android:layout_marginTop="20dp"
-        android:drawableLeft="@drawable/ic_baseline_search_24"
-        tools:ignore="MissingConstraints"
-        android:background="@drawable/shape"
-        android:inputType="text" />
-
-    <TextView
-        android:id="@+id/ListText"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="@string/List"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:layout_marginStart="20dp"
-        />
+        android:orientation="horizontal"
+        >
 
+
+        <TextView
+            android:id="@+id/TaskParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/List"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/delete"
+            android:textColor="@color/white"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="250dp"
+
+            />
+    </LinearLayout>
     <EditText
-        android:id="@+id/CNL"
+        android:id="@+id/CNT"
         android:layout_width="match_parent"
         android:layout_height="35dp"
-        android:hint="@string/CNLH"
+        android:hint="@string/CNTH"
         android:layout_margin="20dp"
         android:layout_marginTop="20dp"
         android:drawableLeft="@drawable/ic_baseline_add_24"
@@ -75,8 +90,8 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
+        android:id="@+id/recyclerTask"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/list_to_do_item"/>
+        />
 </LinearLayout>

@@ -11,20 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDoList">
-        <activity android:name=".SearchItem"></activity>
-        <activity android:name=".Search" />
-        <activity android:name=".tasklist_item" />
-        <activity android:name=".tasklist" />
-        <activity android:name=".listToDo" />
-        <activity android:name=".Singup" />
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".classes.Tasks" />
+        <activity android:name=".classes.Lists" />
+        <activity android:name=".Activity.SignUp" />
+        <activity android:name=".Activity.Login" />
+        <activity android:name=".Activity.SplashLogo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+
+
     </application>
 
 </manifest>

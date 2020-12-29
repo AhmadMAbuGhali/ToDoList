@@ -1,18 +1,29 @@
-package com.example.todolist;
+package com.example.todolist.Activity;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-public class tasklist_item {
-    String taskName;
-    Boolean isCheeked;
-    String taskId;
-    String taskListid;
+import android.os.Bundle;
 
-    public tasklist_item() {
+import com.example.todolist.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class TaskItem {
+     String taskName;
+     Boolean isCheeked;
+     String taskId;
+     String taskListid;
+
+    public TaskItem(String taskName, Boolean isCheeked, String taskId, String taskListid) {
         this.taskName = taskName;
         this.isCheeked = isCheeked;
         this.taskId = taskId;
         this.taskListid = taskListid;
     }
+
+    public TaskItem(){}
+
 
     public String getTaskName() {
         return taskName;

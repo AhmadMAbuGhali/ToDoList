@@ -24,6 +24,7 @@
     <string name="CNTH">Create new task here</string>
     <string name="TaskParent">Task Parent </string>
     <string name="result">Result</string>
+    <string name="logout">Logout</string>
 
     TaskParent
 </resources>

@@ -8,9 +8,10 @@
     android:background="@color/bgColor"
     android:orientation="vertical"
 
-    tools:context=".Login">
+    tools:context=".Activity.Login">
 
     <TextView
+        android:id="@+id/WelcomeBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/WB"
@@ -23,9 +24,9 @@
 
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/Lemail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:layout_marginStart="38dp"
@@ -33,16 +34,17 @@
         android:layout_marginTop="39dp"
         android:hint="@string/email"
         android:textColorHint="@color/white"
+        android:background="@drawable/shape"
 
         android:textColor="@color/white"
 
 
-        />
+        android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/Lpassword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
         android:ems="10"
         android:layout_marginStart="38dp"
         android:layout_marginEnd="37dp"
@@ -50,10 +52,12 @@
         android:hint="@string/Pass"
         android:textColorHint="@color/white"
         android:textColor="@color/white"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:background="@drawable/shape"
+        android:autofillHints="" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/FP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/FP"
@@ -65,6 +69,7 @@
         />
 
     <Button
+        android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/Login"
@@ -76,11 +81,12 @@
         />
 
     <TextView
+        android:id="@+id/DHA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:layout_marginTop="173dp"
+        android:layout_marginTop="15dp"
         android:layout_marginStart="130dp"
         android:text="@string/DHA"
 
@@ -88,6 +94,7 @@
         />
 
     <TextView
+        android:id="@+id/CreateProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/CP"
@@ -97,6 +104,7 @@
         android:textSize="16sp"
 
         />
+
 
 
 

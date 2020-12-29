@@ -11,8 +11,8 @@
 
 
 
-tools:context=".MainActivity">
-<!--IMG  -->
+    tools:context=".Activity.SplashLogo">
+    <!--IMG  -->
     <ImageView
         android:id="@+id/logoImg"
         android:layout_width="wrap_content"
@@ -22,7 +22,7 @@ tools:context=".MainActivity">
         android:layout_marginTop="259dp"
 
         android:contentDescription="@string/todo" />
-<!--  TEXT  -->
+    <!--  TEXT  -->
 
     <TextView
         android:id="@+id/Logo"
@@ -41,3 +41,4 @@ tools:context=".MainActivity">
 
 
 </LinearLayout>
+
