@@ -11,11 +11,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ToDoList">
+<<<<<<< HEAD
         <activity android:name=".classes.Tasks" />
         <activity android:name=".classes.Lists" />
         <activity android:name=".Activity.SignUp" />
         <activity android:name=".Activity.Login" />
         <activity android:name=".Activity.SplashLogo">
+=======
+<<<<<<< HEAD
+        <activity android:name=".tasklist_item"></activity>
+        <activity android:name=".tasklist" />
+        <activity android:name=".listToDo" />
+        <activity android:name=".Singup" />
+        <activity android:name=".Login" />
+=======
+        <meta-data
+            android:name="com.google.android.actions"
+            android:resource="@xml/custom_button" />
+
+        <activity android:name=".Register">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+>>>>>>> 4bd5f57d47cedef50b7afd0efed8544ced8448d2
+        <activity android:name=".MainActivity">
+>>>>>>> d945f1a797f74c987d746a6cd31ab93bf380f3e1
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
