@@ -46,13 +46,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListAdapterVie
         ListsItem item = listsItems.get(position);
         holder.ListName.setText(item.getListName());
         int size = getListSize(item.getListName());
-        holder.TaskNum.setText(size+"");
+
+        holder.TaskNum.setText(size+" Tasks");
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent =new Intent(context, Tasks.class);
                 intent.putExtra("ListName",item.getListName());
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("ListId",item.getListId());
+
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
         });
@@ -78,8 +81,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ListAdapterVie
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String uid = user.getUid();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child("tasks");
-        reference.addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Tasks")
+        .addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot s : snapshot.getChildren()) {

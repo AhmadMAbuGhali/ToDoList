@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
     TextView WelcomeBack,DHA,FP,CreateProfile;
@@ -41,11 +42,14 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 String email =Lemail.getText().toString().trim();
                 String password = Lpassword.getText().toString().trim();
-   //Cheek if user login
-    if (mAuth.getCurrentUser() != null){
-        startActivity(new Intent(getApplicationContext(),Lists.class));
-        finish();
-    }
+
+                FirebaseUser user = mAuth.getCurrentUser();
+                if (user!=null)
+                {
+                    Intent intent = new Intent(Login.this , Lists.class);
+                    startActivity(intent);
+                }
+
 
                 //Check if data not null
 

@@ -15,6 +15,10 @@ public class ListsItem {
     public ListsItem(){
 
     }
+    public ListsItem(String listName, String taskNum ) {
+        ListName = listName;
+        TaskNum = taskNum;
+    }
 
     public String getListId() {
         return ListId;
@@ -24,10 +28,6 @@ public class ListsItem {
         ListId = listId;
     }
 
-    public ListsItem(String listName, String taskNum , String listId) {
-        ListName = listName;
-        TaskNum = taskNum;
-    }
 
     public String getListName() {
         return ListName;

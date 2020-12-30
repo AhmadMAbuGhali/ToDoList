@@ -15,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.todolist.Activity.ListsItem;
+import com.example.todolist.Activity.Login;
+import com.example.todolist.Activity.SignUp;
 import com.example.todolist.Activity.TaskItem;
 import com.example.todolist.R;
 import com.example.todolist.adapter.TaskAdapter;
@@ -38,7 +40,7 @@ public class Tasks extends AppCompatActivity {
     ListsItem item = new ListsItem();
     public ArrayList<TaskItem> taskItems= new ArrayList<>();
     FirebaseAuth mAuth;
-
+    String ListId;
     ListsItem listsItem = new ListsItem();
     Lists lists = new Lists();
 
@@ -56,6 +58,7 @@ public class Tasks extends AppCompatActivity {
         recyclerTask = findViewById(R.id.recyclerTask);
         checkboxTask = findViewById(R.id.checkboxTask);
         String ListName = getIntent().getExtras().getString("ListName");
+        ListId = getIntent().getExtras().getString("ListId");
         TaskParent.setText(ListName);
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -76,14 +79,13 @@ public class Tasks extends AppCompatActivity {
             public void onClick(View v) {
                 if (!CNT.getText().toString().isEmpty()) {
                     String TaskId =  FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Tasks").push().getKey();
-                    String ListId =  FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").push().getKey();
                     TaskItem taskItem = new TaskItem();
                     taskItem.setTaskName(CNT.getText().toString());
                     taskItem.setCheeked(false);
-                    taskItem.setTaskListid(ListId);
+//                    taskItem.setTaskListid(ListId);
                     taskItem.setTaskId(TaskId);
 
-                    FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Tasks").child(TaskId).setValue(taskItem);
+                    FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child(ListId).child("Tasks").child(TaskId).setValue(taskItem);
                     Toast.makeText(Tasks.this, "List add successfully", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(Tasks.this, "List don't add successfully", Toast.LENGTH_SHORT).show();
@@ -92,16 +94,10 @@ public class Tasks extends AppCompatActivity {
             }
         });
 
-        recyclerTask = findViewById(R.id.recyclerTask);
-        recyclerTask.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new TaskAdapter(this, taskItems);
-        recyclerTask.setAdapter(adapter);
 
-        String TaskId =  FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Tasks").push().getKey();
-        String ListId =  FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").push().getKey();
 
-        TaskItem taskItem =new TaskItem();
-        FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Tasks").child(TaskId).child(ListId)
+
+        FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child(ListId).child("Tasks")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -121,13 +117,17 @@ public class Tasks extends AppCompatActivity {
 
                 });
 
+        recyclerTask = findViewById(R.id.recyclerTask);
+        recyclerTask.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new TaskAdapter(this, taskItems);
+        recyclerTask.setAdapter(adapter);
 
         delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TaskItem task = new TaskItem();
-                String TaskId =  FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Tasks").push().getKey();
-                FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").child("Tasks").child(TaskId).removeValue();
+                FirebaseDatabase.getInstance().getReference("Users").child(uid).child("Lists").removeValue();
+                Intent intent = new Intent(Tasks.this, Lists.class);
+                startActivity(intent);
             }
 
         });
